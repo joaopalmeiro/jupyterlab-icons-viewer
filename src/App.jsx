@@ -19,7 +19,7 @@ function App() {
         </Breakout>
 
         <Grid gridItemMinWidth={ICON_SIZE} gap={ICON_SIZE}>
-          {Object.entries(icons).map(([iconName, icon]) => {
+          {Object.entries(icons).map(([iconName, icon], index) => {
             // console.log(icon)
 
             return (
@@ -34,7 +34,9 @@ function App() {
                   width={ICON_SIZE}
                   height={ICON_SIZE}
                 />
-                <p className="truncate text-center">{iconName}</p>
+                <p className="truncate text-center">
+                  {index + 1}. {iconName}
+                </p>
               </Stack>
             )
           })}
