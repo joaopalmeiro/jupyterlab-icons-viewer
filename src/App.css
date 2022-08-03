@@ -10,8 +10,21 @@ h1 {
   font-weight: 600;
 }
 
-code {
+code,
+kbd {
   font-family: 'Roboto Mono', monospace;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: inherit;
 }
 
 .App {

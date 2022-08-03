@@ -18,7 +18,9 @@
     "@christiankaindl/lyts": "1.2.0-beta.3",
     "@jupyterlab/ui-components": "3.2.5",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-device-detect": "2.2.2",
+    "react-dom": "18.2.0",
+    "usehooks-ts": "2.6.0"
   },
   "prettier": "prettier-config-standard"
 }

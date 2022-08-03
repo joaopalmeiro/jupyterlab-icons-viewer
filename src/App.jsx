@@ -1,8 +1,12 @@
+import { Breakout, Clamp, Grid, Stack } from '@christiankaindl/lyts'
 import * as icons from '@jupyterlab/ui-components/lib/icon/iconimports'
-import { Stack, Grid, Clamp, Breakout } from '@christiankaindl/lyts'
+import { useCopyToClipboard } from 'usehooks-ts'
+import { isMacOs, isDesktop } from 'react-device-detect'
 
 import '@christiankaindl/lyts/style.css'
 import './App.css'
+
+// https://github.com/duskload/react-device-detect/blob/master/src/lib/selectors.js
 
 // https://github.com/jupyterlab/jupyterlab/blob/v3.2.5/packages/ui-components/src/icon/iconimports.ts#L91
 // Namespace import: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#namespace_import
@@ -10,6 +14,10 @@ import './App.css'
 const ICON_SIZE = `${16 * 5}px`
 
 function App() {
+  // https://www.samanthaming.com/tidbits/13-skip-values-in-destructuring/
+  // https://usehooks-ts.com/react-hook/use-copy-to-clipboard
+  const [, copy] = useCopyToClipboard()
+
   return (
     <div className="App">
       {/* https://tailwindcss.com/docs/container */}
@@ -18,9 +26,26 @@ function App() {
       {/* https://developer.mozilla.org/en-US/docs/Web/HTML/Element/code */}
       <Clamp clamp="1024px" gap={ICON_SIZE}>
         <Breakout xAlign="center">
-          <h1>@jupyterlab/ui-components@3.2.5</h1>
+          <h1>
+            @jupyterlab/ui-components
+            <span style={{ color: '#545775' }}>@3.2.5</span>
+          </h1>
           <p>
-            Double-click to copy an icon's <code>import</code> declaration
+            Double-click to copy an icon name to import.
+            {isMacOs && (
+              <span>
+                {' '}
+                Double-click while holding <kbd>⌥ Option</kbd> to copy an icon's{' '}
+                <code>import</code> declaration.
+              </span>
+            )}
+            {isDesktop && !isMacOs && (
+              <span>
+                {' '}
+                Double-click while holding <kbd>Alt</kbd> to copy an icon's{' '}
+                <code>import</code> declaration.
+              </span>
+            )}
           </p>
         </Breakout>
 
@@ -32,7 +57,15 @@ function App() {
               <Stack
                 key={icon.name}
                 xAlign="center"
-                onDoubleClick={() => console.log(iconName)}
+                // https://reactjs.org/docs/events.html#mouse-events
+                // alt or option key: https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/altKey
+                onDoubleClick={({ altKey }) => {
+                  const msg = altKey
+                    ? `import { ${iconName} } from "@jupyterlab/ui-components";`
+                    : iconName
+
+                  copy(msg)
+                }}
                 style={{ cursor: 'copy' }}>
                 <img
                   alt={icon.name}
@@ -40,6 +73,7 @@ function App() {
                   width={ICON_SIZE}
                   height={ICON_SIZE}
                 />
+
                 <p className="truncate text-center">
                   {index + 1}. {iconName}
                 </p>
@@ -47,6 +81,16 @@ function App() {
             )
           })}
         </Grid>
+
+        <Breakout xAlign="center">
+          <footer>
+            <a
+              href="https://github.com/joaopalmeiro/jupyterlab-icons-viewer"
+              target="_blank">
+              Source →
+            </a>
+          </footer>
+        </Breakout>
       </Clamp>
     </div>
   )
