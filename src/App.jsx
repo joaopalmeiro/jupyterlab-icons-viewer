@@ -13,9 +13,15 @@ function App() {
   return (
     <div className="App">
       {/* https://tailwindcss.com/docs/container */}
+      {/* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#description */}
+      {/* https://www.merriam-webster.com/dictionary/double-click */}
+      {/* https://developer.mozilla.org/en-US/docs/Web/HTML/Element/code */}
       <Clamp clamp="1024px" gap={ICON_SIZE}>
         <Breakout xAlign="center">
           <h1>@jupyterlab/ui-components@3.2.5</h1>
+          <p>
+            Double-click to copy an icon's <code>import</code> declaration
+          </p>
         </Breakout>
 
         <Grid gridItemMinWidth={ICON_SIZE} gap={ICON_SIZE}>

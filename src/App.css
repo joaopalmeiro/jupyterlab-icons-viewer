@@ -1,6 +1,17 @@
+/* https://fonts.bunny.net/ */
+@import url(https://fonts.bunny.net/css?family=inter:400,600|roboto-mono:400);
+
 * {
   /* https://www.joshwcomeau.com/css/custom-css-reset/ */
   margin: 0;
+}
+
+h1 {
+  font-weight: 600;
+}
+
+code {
+  font-family: 'Roboto Mono', monospace;
 }
 
 .App {
@@ -12,6 +23,7 @@
   /* https://dribbble.com/shots/18959433-SUAVE-color-palette */
   background-color: #f7f9f7;
   color: #19180a;
+  font-family: 'Inter', sans-serif;
 }
 
 .truncate {
