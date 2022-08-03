@@ -1,0 +1,31 @@
+* {
+  /* https://www.joshwcomeau.com/css/custom-css-reset/ */
+  margin: 0;
+}
+
+.App {
+  /* https://tailwindcss.com/docs/padding */
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  /* https://dribbble.com/shots/18959433-SUAVE-color-palette */
+  background-color: #f7f9f7;
+  color: #19180a;
+}
+
+.truncate {
+  /* Alternative: */
+  /* word-break: break-word; */
+
+  /* https://developer.mozilla.org/pt-BR/docs/Web/CSS/text-overflow#examples */
+  /* https://tailwindcss.com/docs/text-overflow */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
