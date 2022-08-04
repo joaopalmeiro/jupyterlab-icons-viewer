@@ -5,6 +5,12 @@
 - `npm install`
 - `npm run dev`
 
+## Deployment ([Surge](https://surge.sh/))
+
+- `npm install -g surge` (if needed)
+- `npm run build`
+- `surge dist`
+
 ## Notes
 
 - `npm create vite@latest jupyterlab-icons-viewer -- --template react`
