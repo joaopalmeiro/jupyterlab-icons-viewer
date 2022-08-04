@@ -27,3 +27,4 @@
 - [usehooks-ts](https://github.com/juliencrn/usehooks-ts) package (`npm install usehooks-ts`)
 - [react-device-detect](https://github.com/duskload/react-device-detect) package (`npm install react-device-detect`)
 - [React Haiku](https://github.com/DavidHDev/react-haiku) package (`npm install react-haiku`)
+- Browser for screenshots: [Confectionery](https://confectioneryapp.com/)
