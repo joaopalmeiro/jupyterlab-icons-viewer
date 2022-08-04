@@ -25,12 +25,12 @@ function App() {
       {/* https://www.merriam-webster.com/dictionary/double-click */}
       {/* https://developer.mozilla.org/en-US/docs/Web/HTML/Element/code */}
       <Clamp clamp="1024px" gap={ICON_SIZE}>
-        <Breakout xAlign="center">
-          <h1>
+        <Breakout>
+          <h1 className="text-center">
             @jupyterlab/ui-components
             <span style={{ color: '#545775' }}>@3.2.5</span>
           </h1>
-          <p>
+          <p className="text-center">
             Double-click to copy an icon name to import.
             {isMacOs && (
               <span>
@@ -52,7 +52,6 @@ function App() {
         <Grid gridItemMinWidth={ICON_SIZE} gap={ICON_SIZE}>
           {Object.entries(icons).map(([iconName, icon], index) => {
             // console.log(icon)
-
             return (
               <Stack
                 key={icon.name}

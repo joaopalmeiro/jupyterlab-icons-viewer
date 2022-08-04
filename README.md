@@ -11,7 +11,8 @@
 
 - `npm install -g surge` (if needed)
 - `npm run build`
-- `surge dist` (https://jupyterlab-icons-viewer.surge.sh/)
+- `surge dist`
+- Domain: https://jupyterlab-icons-viewer.surge.sh/
 
 ## Notes
 
