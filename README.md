@@ -1,5 +1,7 @@
 # jupyterlab-icons-viewer
 
+[![Page screenshot](screenshot.png)](https://jupyterlab-icons-viewer.surge.sh/)
+
 ## Development
 
 - `npm install`
@@ -9,7 +11,7 @@
 
 - `npm install -g surge` (if needed)
 - `npm run build`
-- `surge dist`
+- `surge dist` (https://jupyterlab-icons-viewer.surge.sh/)
 
 ## Notes
 
